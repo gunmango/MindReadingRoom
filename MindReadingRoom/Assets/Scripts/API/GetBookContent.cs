@@ -1,29 +1,37 @@
+using System.Collections;
+using Newtonsoft.Json;
+using UnityEngine;
 using UnityEngine.Networking;
 
-namespace HTTP
+public class GetBookContent
 {
-    public class GetBookContent : ApiBase
+    public class Result
     {
-        private static string Uri => $"{Common.Domain}/api/book/detail";
-
-        public static UnityWebRequest CreateWebRequest(string nickname, string index, int row)
+        public class Data
         {
-            string urlWithParams = $"{Uri}?nickname={UnityWebRequest.EscapeURL(nickname)}&index={UnityWebRequest.EscapeURL(index)}&row={row}";
-            var webRequest = UnityWebRequest.Get(urlWithParams);
-            webRequest.SetRequestHeader("Content-Type", "text/plain");
-            return webRequest;
+            public string content;
+            public string url;
         }
+    
+        public Data data;
+        public string error;
+        public string message;
+        public bool status;
+    }
+    
+    public static IEnumerator Send(string nickname, string index, int row)
+    {
+        var webRequest = UnityWebRequest.Get($"{Constants.Url}/api/book/detail?nickname={UnityWebRequest.EscapeURL(nickname)}&index={UnityWebRequest.EscapeURL(index)}&row={row}");
+        Debug.Log(webRequest.uri.ToString());
+        
+        webRequest.SetRequestHeader("Content-Type", "text/plain");
+        
+        yield return webRequest.SendWebRequest();
+        
+        Debug.Log(webRequest.downloadHandler.text);
 
-        public class Result : ResultBase
-        {
-            public class Data
-            {
-                public int bookId;
-                public string content;
-                public string url;
-            }
-
-            public Data data;
-        }
+        string jsonText = webRequest.downloadHandler.text;
+        Result getJson = JsonConvert.DeserializeObject<Result>(jsonText);
+        Debug.Log($"{getJson.data.content} / {getJson.data.url}");
     }
 }

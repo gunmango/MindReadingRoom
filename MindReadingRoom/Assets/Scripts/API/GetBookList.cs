@@ -1,28 +1,37 @@
-using UnityEngine.Networking;
 using System.Collections.Generic;
+using System.Collections;
+using Newtonsoft.Json;
+using UnityEngine;
+using UnityEngine.Networking;
 
-namespace HTTP
+public class GetBookList
 {
-    public class GetBookList : ApiBase
-   {
-        private static string Uri => $"{Common.Domain}/api/book/list";
-
-        public static UnityWebRequest CreateWebRequest(string nickname)
+    public class Result
+    {
+        public class Data
         {
-            string urlWithParams = $"{Uri}?nickname={UnityWebRequest.EscapeURL(nickname)}";
-            var webRequest = UnityWebRequest.Get(urlWithParams);
-            webRequest.SetRequestHeader("Content-Type", "text/plain");
-            return webRequest;
+            public List<int> bookIdList;
         }
+    
+        public Data data;
+        public string error;
+        public string message;
+        public bool status;
+    }
+    
+    public static IEnumerator Send(string nickname)
+    {
+        var webRequest = UnityWebRequest.Get($"{Constants.Url}/api/book/list?nickname={UnityWebRequest.EscapeURL(nickname)}");
+        Debug.Log(webRequest.uri.ToString());
+        
+        webRequest.SetRequestHeader("Content-Type", "text/plain");
+        
+        yield return webRequest.SendWebRequest();
+        
+        Debug.Log(webRequest.downloadHandler.text);
 
-        public class Result : ResultBase
-        {
-            public class Data
-            {
-                public List<int> bookIdList;
-            }
-
-            public Data data;
-        }
+        string jsonText = webRequest.downloadHandler.text;
+        Result getJson = JsonConvert.DeserializeObject<Result>(jsonText);
+        Debug.Log($"{getJson.data.bookIdList}");
     }
 }
