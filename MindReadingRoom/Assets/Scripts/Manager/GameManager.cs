@@ -21,18 +21,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private CursorStateManager cursorStateManager = null;
     public static CursorStateManager CursorStateManager => Instance.cursorStateManager;
-    
-    [SerializeField] private BookManager bookManager = null;
-    public static BookManager BookManager => Instance.bookManager;
 
     [SerializeField] private WebManager webManager = null;
     public static WebManager WebManager => Instance.webManager;
 
     [SerializeField] private DataManager dataManager = null;
     public static DataManager DataManager => Instance.dataManager;
-
-    private void Start()
-    {
-        // bookManager.Initialize();
-    }
 }

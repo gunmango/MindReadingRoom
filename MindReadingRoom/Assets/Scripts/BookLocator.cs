@@ -30,7 +30,6 @@ public class BookLocator : MonoBehaviour
         
         foreach(var shelf in bookShelves)
         {
-            
             foreach (var book in shelf.books)
             {
                 if (book.gameObject.activeInHierarchy)
@@ -40,7 +39,6 @@ public class BookLocator : MonoBehaviour
             }
         }
 
-        int index = Random.Range(0, books.Count);
         return books[Random.Range(0, books.Count)];
     }
 }

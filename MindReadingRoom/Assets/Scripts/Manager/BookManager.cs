@@ -5,9 +5,25 @@ using Unity.VisualScripting;
 
 public class BookManager : MonoBehaviour
 {
+    public static BookManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        // 싱글톤 인스턴스가 없으면 등록
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // 씬 전환에도 살아남게
+        }
+        else
+        {
+            Destroy(gameObject); // 중복 인스턴스 제거
+        }
+    }
+    
     [SerializeField] private BookLocator bookLocator;
 
-    public void Initialize()
+    public void Start()
     {
         //저장된 책 위치들 받아오기
         GameManager.WebManager.SendGetBookLocations(FillInitialBooks);

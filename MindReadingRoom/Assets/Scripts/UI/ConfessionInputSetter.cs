@@ -20,7 +20,7 @@ public class ConfessionInputSetter : APopupSetter
     {
         userInput = _updater.InputField.text;
         
-        GameManager.BookManager.CreateRandomBook(userInput);
+        BookManager.Instance.CreateRandomBook(userInput);
         
         _updater.InputField.text = "";
         _updater.gameObject.SetActive(false);
