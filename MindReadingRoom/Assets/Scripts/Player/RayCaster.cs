@@ -17,7 +17,7 @@ public class Raycaster : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance, layerMask))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 hit.collider.GetComponent<Interactable>()?.Interact();
             }

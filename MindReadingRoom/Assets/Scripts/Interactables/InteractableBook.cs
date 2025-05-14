@@ -3,6 +3,8 @@ using System.Collections;
 
 public class InteractableBook : OutLineableObject, Interactable
 {
+    public BookLocationData location;
+    
     private static EPopupType popupType = EPopupType.Book;
 
     private BookData bookData = null;
@@ -17,7 +19,7 @@ public class InteractableBook : OutLineableObject, Interactable
 
     private void GetBookData()
     {
-        GameManager.WebManager.SendGetBookContent(SetBookData);
+        GameManager.WebManager.SendGetBookContent(location, SetBookData);
     }
 
     public void GlowBook()
