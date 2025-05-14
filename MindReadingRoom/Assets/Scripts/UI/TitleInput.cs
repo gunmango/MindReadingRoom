@@ -24,6 +24,7 @@ public class TitleInput : MonoBehaviour
 
         GameManager.DataManager.Nickname = userInput;
         Debug.Log(GameManager.DataManager.Nickname);
+        GameManager.BookManager.Initialize();
 
         SceneManager.LoadScene("SampleScene");
     }

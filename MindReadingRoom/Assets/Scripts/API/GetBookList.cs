@@ -1,17 +1,23 @@
-using System;
-using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections.Generic;
+using System;
 
 public class GetBookList
 {
     public class Result
     {
-        public string Index;
-        public int Row;
+        public class Data
+        {
+            public List<BookLocationData> bookLocations;
+        }
+    
+        public Data data;
+        public string error;
+        public string message;
+        public bool status;
     }
     
     public static IEnumerator Send(string nickname, Action<List<BookLocationData>> callback)
@@ -26,18 +32,7 @@ public class GetBookList
         Debug.Log(webRequest.downloadHandler.text);
 
         string jsonText = webRequest.downloadHandler.text;
-        var list = JsonConvert.DeserializeObject<List<Result>>(jsonText);
-        
-        List<BookLocationData> locationDatas = new List<BookLocationData>();
-        
-        foreach (var data in list)
-        {
-            BookLocationData location = new BookLocationData();
-            location.shelfID = data.Index;
-            location.row = data.Row;
-            locationDatas.Add(location);
-        }
-        
-        callback?.Invoke(locationDatas);
+        var result = JsonConvert.DeserializeObject<List<BookLocationData>>(jsonText);
+        callback.Invoke(result);
     }
 }

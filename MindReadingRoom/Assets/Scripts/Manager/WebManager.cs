@@ -14,7 +14,7 @@ public class WebManager : MonoBehaviour
     public void SendGetBookLocations(Action<List<BookLocationData>> callback)
     {
         Debug.Log("SendGetBookLocations");
-        //StartCoroutine(GetBookList.Send(dataManager.Nickname, callback));
+        StartCoroutine(GetBookList.Send(dataManager.Nickname, callback));
     }
 
     // 책정보 (이미지, 시) 가져오기
