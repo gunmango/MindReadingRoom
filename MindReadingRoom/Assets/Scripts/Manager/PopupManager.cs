@@ -30,6 +30,8 @@ public class PopupManager : MonoBehaviour
 
     private static APopupSetter _currentPopupSetter = null;
     
+    private Queue<APopupSetter> popupSetterQueue = new Queue<APopupSetter>();
+    
     public void ShowPopup(EPopupType popupType)
     {
         _currentPopupSetter = popupSetters.Find(x => x.PopupType == popupType);
@@ -66,5 +68,18 @@ public class PopupManager : MonoBehaviour
         _currentPopupSetter = null;
         GameManager.CursorStateManager.LockCursor();
         OnClosePopup?.Invoke();
+    }
+
+    public void ShowNotice(EPopupType popupType, object data)
+    {
+        APopupSetter notice = popupSetters.Find(x => x.PopupType == popupType);
+
+        if (notice == null)
+        {
+            Debug.LogError("Popup setter not found");
+            return;
+        }
+        notice.SetPopup(data);
+        notice.ShowPopup();
     }
 }
