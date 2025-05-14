@@ -19,6 +19,9 @@ public class ConfessionInputSetter : APopupSetter
     public override void HidePopup()
     {
         userInput = _updater.InputField.text;
+        
+        GameManager.BookManager.CreateRandomBook(userInput);
+        
         _updater.InputField.text = "";
         _updater.gameObject.SetActive(false);
     }
