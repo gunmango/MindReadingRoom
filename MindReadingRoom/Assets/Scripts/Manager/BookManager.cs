@@ -8,11 +8,8 @@ public class BookManager : MonoBehaviour
 
     public void Initialize()
     {
-        List<BookLocationData> bookLocations = new List<BookLocationData>();
-        
         //저장된 책 위치들 받아오기
-        
-        FillInitialBooks(bookLocations);
+        GameManager.WebManager.SendGetBookLocations(FillInitialBooks);
     }
     
     public void FillInitialBooks(List<BookLocationData> books)
@@ -23,7 +20,7 @@ public class BookManager : MonoBehaviour
             
             if (book != null)
             {
-                //있던책 세팅
+                //있던 책 세팅
                 book.gameObject.SetActive(true);
             }
         }
@@ -31,10 +28,11 @@ public class BookManager : MonoBehaviour
 
     public void CreateRandomBook(string userInput)
     {
-        BookLocationData bookLocationData = new BookLocationData();
-        InteractableBook book = bookLocator.GetRandomInactiveBook(out bookLocationData);
+        InteractableBook book = bookLocator.GetRandomInactiveBook(out var bookLocationData);
         
         //책위치와 고민을 백엔드에 전달
+        GameManager.WebManager.SendBookLocationAndUserInput(bookLocationData, userInput);
+        
         book.GlowBook();
     }
 }

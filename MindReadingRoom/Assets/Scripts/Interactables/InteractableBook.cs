@@ -17,7 +17,7 @@ public class InteractableBook : OutLineableObject, Interactable
 
     private void GetBookData()
     {
-        StartCoroutine(GetBookDataCo());
+        GameManager.WebManager.SendGetBookContent(SetBookData);
     }
 
     public void GlowBook()
@@ -25,11 +25,9 @@ public class InteractableBook : OutLineableObject, Interactable
         
     }
 
-    private IEnumerator GetBookDataCo()
+    public void SetBookData(BookData bookData)
     {
-        bookData = new BookData();
-        //책데이터 가져오기
-        yield return null;
+        this.bookData = bookData;
         GameManager.PopupManager.SetPopup(popupType, bookData);
     }
 

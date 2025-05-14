@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WebManager : MonoBehaviour
+{
+    // 저장된 모든 책 위치 가져오기
+    public void SendGetBookLocations(Action<List<BookLocationData>> callback)
+    {
+        Debug.Log("SendGetBookLocations");
+        
+        List<BookLocationData> books = new List<BookLocationData>();
+        callback.Invoke(books);
+    }
+
+    // 책정보 (이미지, 시) 가져오기
+    public void SendGetBookContent(Action<BookData> callback)
+    {
+        Debug.Log("GetBookContent");
+        
+        BookData book = new BookData();
+        callback.Invoke(book);
+    }
+
+    // 책 위치와, 유저 고민 백엔드로
+    public void SendBookLocationAndUserInput(BookLocationData location, string input)
+    {
+        Debug.Log("SendBookLocationAndUserInput");
+    }
+}

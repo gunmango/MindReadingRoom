@@ -28,9 +28,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BookManager bookManager = null;
     public static BookManager BookManager => Instance.bookManager;
 
+    [SerializeField] private WebManager webManager = null;
+    public static WebManager WebManager => Instance.webManager;
 
     private void Start()
     {
-        //bookManager.FillInitialBooks();
+        bookManager.Initialize();
     }
 }

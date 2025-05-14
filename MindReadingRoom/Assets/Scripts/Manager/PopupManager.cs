@@ -39,7 +39,6 @@ public class PopupManager : MonoBehaviour
         }
         
         popup.SetPopup(data);
-        GameManager.CursorStateManager.UnlockCursor();
     }
 
     public void HidePopup()
