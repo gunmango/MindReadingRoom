@@ -31,6 +31,8 @@ public class BookManager : MonoBehaviour
     
     public void FillInitialBooks(List<BookLocationData> books)
     {
+        if(books == null)
+            return;
         if (books.Count == 0)
             return;
         
