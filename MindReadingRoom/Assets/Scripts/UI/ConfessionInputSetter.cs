@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ConfessionInputSetter : MonoBehaviour
+public class ConfessionInputSetter : APopupSetter
 {
     [SerializeField] private ConfessionInputUpdater _updater = null;
 
@@ -10,17 +10,16 @@ public class ConfessionInputSetter : MonoBehaviour
         _updater.gameObject.SetActive(false);
     }
 
-    public void ShowPopup()
+    public override void ShowPopup()
     {
         _updater.gameObject.SetActive(true);
+        _updater.InputField.ActivateInputField(); // 실행 시 자동 포커스
     }
 
-    public void OnClickSubmit()
+    public override void HidePopup()
     {
         userInput = _updater.InputField.text;
         _updater.InputField.text = "";
         _updater.gameObject.SetActive(false);
-        
-        //userInput 서버전달
     }
 }

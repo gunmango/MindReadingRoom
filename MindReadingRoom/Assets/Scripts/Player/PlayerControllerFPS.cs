@@ -14,12 +14,13 @@ public class PlayerControllerFPS : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
+        if(GameManager.PopupManager.IsPopupOpen())
+            return;
+        
         // 마우스 입력
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -35,6 +36,9 @@ public class PlayerControllerFPS : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(GameManager.PopupManager.IsPopupOpen())
+            return;
+        
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 

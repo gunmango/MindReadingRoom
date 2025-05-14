@@ -4,10 +4,11 @@ public class InteractableLibrarian : MonoBehaviour, Interactable
 {
     public void Interact()
     {
-        ShowInputPopup();
+        ShowConfessionInputPopup();
     }
 
-    private void ShowInputPopup()
+    private void ShowConfessionInputPopup()
     {
+        GameManager.PopupManager.ShowPopup(EPopupType.ConfessionInput);
     }
 }
