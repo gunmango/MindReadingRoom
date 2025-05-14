@@ -16,6 +16,7 @@ public class GetImg
         yield return webRequest.SendWebRequest();
 
         Sprite sprite = GetSprite(webRequest);
+        Debug.Log("GetImg 완료");
         OnCompleted.Invoke(sprite);
     }
     
