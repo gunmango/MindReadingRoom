@@ -6,7 +6,7 @@ namespace HTTP
 {
     public class PostContent : ApiBase
     {
-        private static string Uri => $"{Common.Domain}/post-content";
+        private static string Uri => $"{Common.Domain}/api/book/save";
 
         public static UnityWebRequest CreateWebRequest(string content, string index, int row, string nickname)
         {

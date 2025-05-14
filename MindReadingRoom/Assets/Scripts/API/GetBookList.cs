@@ -4,12 +4,13 @@ using System.Collections.Generic;
 namespace HTTP
 {
     public class GetBookList : ApiBase
-    {
-        private static string Uri => $"{Common.Domain}/get-book-list";
+   {
+        private static string Uri => $"{Common.Domain}/api/book/list";
 
-        public static UnityWebRequest CreateWebRequest()
+        public static UnityWebRequest CreateWebRequest(string nickname)
         {
-            var webRequest = UnityWebRequest.Get(Uri);
+            string urlWithParams = $"{Uri}?nickname={UnityWebRequest.EscapeURL(nickname)}";
+            var webRequest = UnityWebRequest.Get(urlWithParams);
             webRequest.SetRequestHeader("Content-Type", "text/plain");
             return webRequest;
         }

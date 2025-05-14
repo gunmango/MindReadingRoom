@@ -6,11 +6,10 @@ namespace HTTP
 {
     public class GetImg : ApiBase
     {
-        private static string Uri => $"{Common.Domain}/get-img";
-
-        public static UnityWebRequest CreateTextureWebRequest(string filename)
+        public static UnityWebRequest CreateTextureWebRequest(string imageUrl)
         {
-            var webRequest = UnityWebRequestTexture.GetTexture($"{Uri}/{filename}");
+            // 직접 이미지 URL로 요청
+            var webRequest = UnityWebRequestTexture.GetTexture(imageUrl);
             webRequest.SetRequestHeader("Content-Type", "text/plain");
             return webRequest;
         }
@@ -25,6 +24,5 @@ namespace HTTP
             sprite.name = Path.GetFileName(webRequest.url);
             return sprite;
         }
-
     }
 }
