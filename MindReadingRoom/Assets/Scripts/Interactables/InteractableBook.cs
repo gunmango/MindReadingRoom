@@ -14,7 +14,7 @@ public class InteractableBook : OutLineableObject, Interactable
         if(bookData == null)
             GetBookData();
         
-        GameManager.PopupManager.ShowPopup(popupType);
+        PopupManager.Instance.ShowPopup(popupType);
     }
 
     private void GetBookData()
@@ -30,7 +30,7 @@ public class InteractableBook : OutLineableObject, Interactable
     public void SetBookData(BookData bookData)
     {
         this.bookData = bookData;
-        GameManager.PopupManager.SetPopup(popupType, bookData);
+        PopupManager.Instance.ShowPopup(popupType);
     }
 
     private void Awake()

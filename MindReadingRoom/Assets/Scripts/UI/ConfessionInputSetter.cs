@@ -25,4 +25,17 @@ public class ConfessionInputSetter : APopupSetter
         _updater.InputField.text = "";
         _updater.gameObject.SetActive(false);
     }
+
+    private void Update()
+    {
+        if (_updater.gameObject.activeInHierarchy == false)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            PopupManager.Instance.HidePopup();
+        }
+        
+        
+    }
 }

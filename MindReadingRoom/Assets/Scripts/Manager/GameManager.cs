@@ -19,9 +19,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private PopupManager popupManager = null;
-    public static PopupManager PopupManager => Instance.popupManager;
-    
     [SerializeField] private CursorStateManager cursorStateManager = null;
     public static CursorStateManager CursorStateManager => Instance.cursorStateManager;
     
