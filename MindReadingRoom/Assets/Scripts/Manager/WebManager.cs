@@ -22,15 +22,12 @@ public class WebManager : MonoBehaviour
     {
         Debug.Log("GetBookContent");
         StartCoroutine(GetBookContent.Send(dataManager.Nickname, location, callback));
-
-        BookData book = new BookData();
-        callback.Invoke(book);
     }
 
     // 책 위치와, 유저 고민 백엔드로
     public void SendBookLocationAndUserInput(BookLocationData location, string input)
     {
         Debug.Log("SendBookLocationAndUserInput");
-        //StartCoroutine(PostContent.Send(input, location.shelfID, location.row, dataManager.Nickname));
+        StartCoroutine(PostContent.Send(input, location.shelfID, location.row, dataManager.Nickname));
     }
 }

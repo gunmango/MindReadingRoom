@@ -30,7 +30,7 @@ public class InteractableBook : OutLineableObject, Interactable
     public void SetBookData(BookData bookData)
     {
         this.bookData = bookData;
-        PopupManager.Instance.ShowPopup(popupType);
+        PopupManager.Instance.SetPopup(popupType, bookData);
     }
 
     private void Awake()

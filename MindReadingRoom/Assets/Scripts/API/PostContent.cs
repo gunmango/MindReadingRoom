@@ -53,8 +53,8 @@ public class PostContent
         Debug.Log(webRequest.downloadHandler.text);
 
         string jsonText = webRequest.downloadHandler.text;
-        Result result = JsonConvert.DeserializeObject<Result>(jsonText);
-        Debug.Log($"{result.data.statusCode}");
+        //Result result = JsonConvert.DeserializeObject<Result>(jsonText);
+        //Debug.Log($"{result.data.statusCode}");
     }
 }
 

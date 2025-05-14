@@ -31,6 +31,9 @@ public class BookManager : MonoBehaviour
     
     public void FillInitialBooks(List<BookLocationData> books)
     {
+        if (books.Count == 0)
+            return;
+        
         foreach (BookLocationData bookLocation in books)
         {
             InteractableBook book = bookLocator.FindBookOrNull(bookLocation.shelfID, bookLocation.row);
