@@ -26,4 +26,15 @@ public class BookContentSetter : APopupSetter
             Debug.LogWarning("BookContentSetter: data is not a BookData");
         }
     }
+
+    private void Update()
+    {
+        if (updater.gameObject.activeInHierarchy == false)
+            return;
+        
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            PopupManager.Instance.HidePopup();
+        }
+    }
 }
