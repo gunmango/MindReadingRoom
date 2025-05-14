@@ -24,14 +24,12 @@ public class BookLocator : MonoBehaviour
         //책 찾음
         return shelf.books[row - 1];
     }
-    public InteractableBook GetRandomInactiveBook(out BookLocationData bookLocationData) 
+    public InteractableBook GetRandomInactiveBook() 
     {
         List<InteractableBook> books = new List<InteractableBook>();
-        bookLocationData = new BookLocationData();
         
         foreach(var shelf in bookShelves)
         {
-            bookLocationData.shelfID = shelf.ShelfID;
             
             foreach (var book in shelf.books)
             {
@@ -43,8 +41,6 @@ public class BookLocator : MonoBehaviour
         }
 
         int index = Random.Range(0, books.Count);
-        bookLocationData.row = index + 1;
-        
         return books[Random.Range(0, books.Count)];
     }
 }

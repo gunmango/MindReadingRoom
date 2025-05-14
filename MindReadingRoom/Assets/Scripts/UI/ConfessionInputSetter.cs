@@ -35,7 +35,5 @@ public class ConfessionInputSetter : APopupSetter
         {
             PopupManager.Instance.HidePopup();
         }
-        
-        
     }
 }

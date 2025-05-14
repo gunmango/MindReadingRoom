@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class BookManager : MonoBehaviour
 {
@@ -28,11 +29,13 @@ public class BookManager : MonoBehaviour
 
     public void CreateRandomBook(string userInput)
     {
-        InteractableBook book = bookLocator.GetRandomInactiveBook(out var bookLocationData);
+        InteractableBook book = bookLocator.GetRandomInactiveBook();
         
         //책위치와 고민을 백엔드에 전달
-        GameManager.WebManager.SendBookLocationAndUserInput(bookLocationData, userInput);
+        GameManager.WebManager.SendBookLocationAndUserInput(book.location, userInput);
         
-        book.GlowBook();
+        book.gameObject.SetActive(true);
+
+        PopupManager.Instance.ShowNotice(EPopupType.LocationNotice, book.location);
     }
 }
