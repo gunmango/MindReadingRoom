@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &2629380
@@ -374,7 +373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &42354104
@@ -579,7 +577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &146087650
@@ -952,7 +949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &277751654
@@ -1261,7 +1257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &336422517
@@ -1472,7 +1467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &403073590
@@ -1748,7 +1742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &449373762
@@ -2142,7 +2135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &707896416
@@ -2297,7 +2289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &735356854
@@ -2565,7 +2556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &879681335
@@ -2720,7 +2710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &942557070
@@ -2875,7 +2864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &945835199
@@ -3266,7 +3254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1098938029
@@ -3704,7 +3691,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1390148945
@@ -3859,7 +3845,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1526746084
@@ -4044,8 +4029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shelfID: B
   books:
-  - {fileID: 1852727759}
   - {fileID: 1526746083}
+  - {fileID: 1852727759}
 --- !u!114 &1647051110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8886462793430140625, guid: e9cc9041043159e45a3f1717ed276b53, type: 3}
@@ -4303,7 +4288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1772335381
@@ -4508,7 +4492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1852727760
@@ -4695,7 +4678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1924685358
@@ -4850,7 +4832,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1960758859
@@ -5005,7 +4986,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &1985566672
@@ -5286,7 +5266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &2025756550
@@ -5503,7 +5482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location:
-    bookId: 
     shelfID: 
     row: 0
 --- !u!114 &2111456120
