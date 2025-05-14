@@ -36,6 +36,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        bookManager.Initialize();
+        // bookManager.Initialize();
     }
 }
