@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 public abstract class APopupSetter : MonoBehaviour
 {
     [SerializeField] private EPopupType popupType = EPopupType.None;
@@ -7,4 +7,8 @@ public abstract class APopupSetter : MonoBehaviour
     
     public abstract void ShowPopup();
     public abstract void HidePopup();
+    public virtual void SetPopup(object data)
+    {
+        
+    }
 }

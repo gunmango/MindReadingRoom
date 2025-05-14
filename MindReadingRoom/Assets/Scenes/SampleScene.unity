@@ -375,7 +375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &198033832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2512,6 +2512,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8868376395205116425, guid: d43081fcfc6f4014793567b986b88096, type: 3}
+      propertyPath: bookShelves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868376395205116425, guid: d43081fcfc6f4014793567b986b88096, type: 3}
+      propertyPath: 'bookShelves.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1253135966565839092}
+    - target: {fileID: 8868376395205116425, guid: d43081fcfc6f4014793567b986b88096, type: 3}
+      propertyPath: 'bookShelves.Array.data[1]'
+      value: 
+      objectReference: {fileID: 115896753}
+    - target: {fileID: 8868376395205116425, guid: d43081fcfc6f4014793567b986b88096, type: 3}
+      propertyPath: 'bookShelves.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1785223475}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

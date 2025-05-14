@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PopupManager : MonoBehaviour
 {
     public Action OnClosePopup;
@@ -26,6 +25,20 @@ public class PopupManager : MonoBehaviour
         }
         
         _currentPopupSetter.ShowPopup();
+        GameManager.CursorStateManager.UnlockCursor();
+    }
+
+    public void SetPopup(EPopupType popupType, object data)
+    {
+        APopupSetter popup = popupSetters.Find(x => x.PopupType == popupType);
+
+        if (popup == null)
+        {
+            Debug.LogError("Popup setter not found");
+            return;
+        }
+        
+        popup.SetPopup(data);
         GameManager.CursorStateManager.UnlockCursor();
     }
 

@@ -8,6 +8,4 @@ public class BookShelf : MonoBehaviour
     public string ShelfID { get => shelfID; }
     
     public List<InteractableBook> books = new List<InteractableBook>();
-    
-    
 }
