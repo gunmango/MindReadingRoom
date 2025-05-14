@@ -18,7 +18,7 @@ public class PlayerControllerFPS : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.PopupManager.IsPopupOpen())
+        if(PopupManager.Instance.IsPopupOpen())
             return;
         
         // 마우스 입력
@@ -36,7 +36,7 @@ public class PlayerControllerFPS : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(GameManager.PopupManager.IsPopupOpen())
+        if(PopupManager.Instance.IsPopupOpen())           
             return;
         
         float h = Input.GetAxis("Horizontal");

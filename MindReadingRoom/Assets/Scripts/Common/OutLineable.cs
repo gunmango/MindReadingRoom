@@ -7,7 +7,6 @@ public class OutLineableObject : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log($"{gameObject.name}: Awake");
         outline = GetComponent<Outline>();
     }
     

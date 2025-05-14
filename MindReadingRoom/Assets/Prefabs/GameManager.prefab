@@ -1,54 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &210554070038154723
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2952559999136522334}
-  - component: {fileID: 7264221748529034846}
-  m_Layer: 0
-  m_Name: PopupManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2952559999136522334
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210554070038154723}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6544512215002404269}
-  - {fileID: 3491945420544354432}
-  m_Father: {fileID: 8607935279834271502}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7264221748529034846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210554070038154723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e9d3c19e5254c4ba902793af6a406e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupSetters:
-  - {fileID: 4039842689207893331}
-  - {fileID: 4864793914725002025}
 --- !u!1 &239080302794343714
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,52 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookLocator: {fileID: 8868376395205116425}
---- !u!1 &334151021524158794
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3491945420544354432}
-  - component: {fileID: 4864793914725002025}
-  m_Layer: 0
-  m_Name: BookContentSetter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3491945420544354432
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334151021524158794}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2952559999136522334}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4864793914725002025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334151021524158794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a55fd3567f365e4583dda5121081bb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupType: 2
-  updater: {fileID: 0}
 --- !u!1 &1323832721848519281
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +121,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2952559999136522334}
   - {fileID: 7514578643877303881}
   - {fileID: 6889050276714928547}
   - {fileID: 2166281878602852332}
@@ -234,10 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8901ac3c6e4c6f940882cc460436b060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupManager: {fileID: 7264221748529034846}
+  popupManager: {fileID: 0}
   cursorStateManager: {fileID: 2209795644484459032}
   bookManager: {fileID: 2246551059174079515}
   webManager: {fileID: 6169138592757239363}
+  dataManager: {fileID: 0}
 --- !u!1 &3573783908201027370
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,52 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375552fd2da497942891533ef130cf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4534483076169704006
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6544512215002404269}
-  - component: {fileID: 4039842689207893331}
-  m_Layer: 0
-  m_Name: ConfessionInputSetter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6544512215002404269
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4534483076169704006}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2952559999136522334}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4039842689207893331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4534483076169704006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9efd99d1d4c9141b606be926d00a57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupType: 1
-  _updater: {fileID: 0}
 --- !u!1 &6491581615324421319
 GameObject:
   m_ObjectHideFlags: 0
