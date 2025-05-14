@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;
 public class TitleInput : MonoBehaviour
 {
     public TMP_InputField inputField;
-    public Button sendButton;         
-    void Start()
-    {
-        // 버튼 클릭 시 OnSendButtonClicked() 호출
-        sendButton.onClick.AddListener(OnSendButtonClicked);
-    }
 
     void OnSendButtonClicked()
     {
@@ -26,5 +20,13 @@ public class TitleInput : MonoBehaviour
         Debug.Log(GameManager.DataManager.Nickname);
 
         SceneManager.LoadScene("SampleScene");
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            OnSendButtonClicked();
+        }
     }
 }
